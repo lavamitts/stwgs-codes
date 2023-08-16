@@ -16,6 +16,11 @@ class Commodity(object):
         else:
             self.parent_sid = None
 
+        self.format_description()
+
+    def format_description(self):
+        self.description = self.description.replace(" kg", "&nbsp;kg")
+
     def as_dict(self):
         self.json = {
             "id": self.goods_nomenclature_item_id,
